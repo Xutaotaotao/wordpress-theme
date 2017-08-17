@@ -8,10 +8,7 @@
 					<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 				</h2>
 				<div class="post-content">
-					<?php if(has_post_thumbnail()){
-						the_post_thumbnail();
-						} ?>
-					<?php the_content() ?><!--文章-->
+					<?php the_excerpt() ?><!--文章-->
 						<p class="postmetadata"><!--文章数据-->
 							<?php _e('Filed under&#58;'); ?> 
 							<?php the_category(', ') ?> 

@@ -8,23 +8,12 @@
 					<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 				</h2>
 				<div class="post-content">
-					<?php if(has_post_thumbnail()){
-						the_post_thumbnail();
-						} ?>
 					<?php the_content() ?><!--文章-->
-						<p class="postmetadata"><!--文章数据-->
-							<?php _e('Filed under&#58;'); ?> 
-							<?php the_category(', ') ?> 
-							<?php _e('by'); ?> 
-							<?php  the_author(); ?><br />
-							<?php comments_popup_link('No Comments &#187;', '1 Comment &#187;', '% Comments &#187;'); ?> <?php edit_post_link('Edit', ' &#124; ', ''); ?>
-						</p>
+					<?php link_pages('<p><strong>Pages:</strong>','</p>','number'); ?>
+					<?php edit_post_link('Edit','<p>','</p>') ?>
 				</div>
 			</div>
 		<?php endwhile; ?>
-			<div class="post-nav"><!--文章导航-->
-				<?php posts_nav_link('in between','befor','after'); ?>
-			</div>
 		<?php else: ?>
 			<div class="post">
 				<h2>Not Found</h2>
